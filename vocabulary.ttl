@@ -91,13 +91,13 @@ reliatax:CollectionSystem a skos:Concept;
 
 reliatax:MeterologicalStation a skos:Concept;
   skos:broader reliatax:WindFarm;
-  skos:editorialNote "\"Reliawind Taxonomy ambiguously classifies this concept as a Sub-System, an Assembly, a Sub-assembly, and a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept as a Sub-System, an Assembly, a Sub-assembly, and a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Meterological Station"@en .
 
 reliatax:OperationalInfrastructure a skos:Concept;
   skos:broader reliatax:WindFarm;
-  skos:editorialNote "\"Reliawind Taxonomy ambiguously classifies this concept as a Sub-System, an Assembly, a Sub-assembly, and a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept as a Sub-System, an Assembly, a Sub-assembly, and a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Operational Infrastructure"@en .
 
@@ -208,7 +208,7 @@ reliatax:Foundation a skos:Concept;
 
 reliatax:Tower a skos:Concept;
   skos:broader reliatax:SupportStructure;
-  skos:editorialNote "\"Reliawind Taxonomy ambiguously classifies this concept both as an Assembly and a Sub-assembly.\""@en;
+  skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept both as an Assembly and a Sub-assembly."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:narrower reliatax:AccessEquipment, reliatax:TowerClimbAssist, reliatax:TowerMaintenanceCrane,
     reliatax:TowerNutsAndBolts, reliatax:TowerPaintOrCoating, reliatax:TowerSection;
@@ -216,7 +216,7 @@ reliatax:Tower a skos:Concept;
 
 reliatax:CollectionSystemCable a skos:Concept;
   skos:broader reliatax:CollectionSystem;
-  skos:editorialNote "\"Reliawind Taxonomy ambiguously classifies this concept as an Assembly, a Sub-assembly, and a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept both as an Assembly and a Sub-assembly."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Cable"@en .
 
@@ -550,85 +550,85 @@ reliatax:YawSensors a skos:Concept;
 
 reliatax:BladeLightningProtectionTermination a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Blade Lightning Protection Termination"@en .
 
 reliatax:BladeLightningDownConductor a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Blade Lightning Down-conductor"@en .
 
 reliatax:DeIcingSystem a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "De-Icing System"@en .
 
 reliatax:LeadingEdgeBond a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Leading Edge Bond"@en .
 
 reliatax:NutsAndBolts a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Nuts And Bolts"@en .
 
 reliatax:PaintAndCoating a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Paint And Coating"@en .
 
 reliatax:RootStructure a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Root Structure"@en .
 
 reliatax:SandwichShell a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Sandwich Shell"@en .
 
 reliatax:SparBox a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Spar Box"@en .
 
 reliatax:SparCap a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Spar Cap"@en .
 
 reliatax:SparWeb a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Spar Web"@en .
 
 reliatax:TrailingEdgeBond a skos:Concept;
   skos:broader reliatax:Blade;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Trailing Edge Bond"@en .
 
 reliatax:ExitHatch a skos:Concept;
   skos:broader reliatax:Hub;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Exit Hatch"@en .
 
 reliatax:NoseCone a skos:Concept;
   skos:broader reliatax:Hub;
-  skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
+  skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Nose Cone"@en .
 
