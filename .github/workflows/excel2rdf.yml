@@ -21,15 +21,16 @@ jobs:
           curl -L https://github.com/cmader/qSKOS/releases/download/2.0.3/qSKOS-cmd.jar -o qSKOS.jar
           curl -L https://github.com/sparna-git/xls2rdf/releases/download/2.1.1/xls2rdf-app-2.1.1-onejar.jar -o xls2rdf.jar
 
-      # Validation thows an error for now
-      #- name: build # converts vocabulary.xlsx to vocabulary.ttl
-      #  run: |
-      #    java -jar xls2rdf.jar convert -i ./vocabulary.xlsx -o ./vocabulary.ttl -l en
-      #    mv xls2rdf.log ./logs/conversion.log
 
-      - name: validate # validates vocabulary.ttl against set of qSKOS tests
+      - name: build # converts vocabulary.xlsx to vocabulary.ttl
         run: |
-          java -jar qSKOS.jar analyze -dc mil,bl ./vocabulary.ttl -o ./logs/validation.log
+          java -jar xls2rdf.jar convert -i ./vocabulary.xlsx -o ./vocabulary.ttl -l en
+          mv xls2rdf.log ./logs/conversion.log
+
+      # Validation thows an error for now
+      #- name: validate # validates vocabulary.ttl against set of qSKOS tests
+      #  run: |
+      #    java -jar qSKOS.jar analyze -dc mil,bl ./vocabulary.ttl -o ./logs/validation.log
 
       - name: deploy # commits changes to the repository
         run: |
