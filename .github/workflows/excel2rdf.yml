@@ -26,10 +26,9 @@ jobs:
           java -jar xls2rdf.jar convert -i ./vocabulary.xlsx -o ./vocabulary.ttl -l en
           mv xls2rdf.log ./logs/conversion.log
 
-      # validation fails for now
-      #- name: validate # validates vocabulary.ttl against set of qSKOS tests
-      #  run: |
-      #    java -jar qSKOS.jar analyze -dc mil,bl ./vocabulary.ttl -o ./logs/validation.log
+      - name: validate # validates vocabulary.ttl against set of qSKOS tests
+        run: |
+          java -jar qSKOS.jar analyze -dc mil,bl ./vocabulary.ttl -o ./logs/validation.log
 
       - name: deploy # commits changes to the repository
         run: |
