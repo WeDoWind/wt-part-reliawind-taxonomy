@@ -1,64 +1,2375 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix euvoc: <http://publications.europa.eu/ontology/euvoc#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix reliatax: <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components> .
+@prefix schema: <http://schema.org/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix temp-vocab: <http://www.fairdatacollective.com/template-vocabulary/> .
+@prefix skosthes: <http://purl.org/iso25964/skos-thes#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://www.fairdatacollective.com/template-vocabulary/> a skos:ConceptScheme;
-  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
-  dct:creator <https://orcid.org/0000-0002-9381-9694>;
-  dct:description "This is a template for building a SKOS-based controlled vocabulary. It is used as base of the worflow described in excel2rdf.readthedocs.io/"@en;
-  dct:title "Template for building SKOS based controlled vocabulary"@en;
-  pav:createdOn "2020-10-22T22:00:00+01:00"@en;
-  pav:lastUpdatedOn "2021-02-21T16:32:00-08:00"@en;
-  pav:version "0.1.2"@en;
-  skos:hasTopConcept temp-vocab:TopConceptOne, temp-vocab:TopConceptTwo;
-  skos:prefLabel "Template for building SKOS based controlled vocabulary"@en .
+<https://www.ieawindtask43.org/reliawind-taxonomy-wt-components> a skos:ConceptScheme;
+  dct:contributor <https://orcid.org/0000-0002-6570-6966>;
+  dct:creator <https://orcid.org/0000-0002-6570-6966>;
+  dct:description "A taxonomical organization of wind turbine compenents used within Reliawind project."@en;
+  dct:title "Reliawind Taxonomy of Wind Turbine Components"@en;
+  pav:createdOn "2022-05-22T18:00:00+03:00"@en;
+  pav:lastUpdatedOn "2022-05-22T19:00:00+03:00"@en;
+  pav:version "0.0.1"@en;
+  skos:hasTopConcept <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindFarm>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>;
+  skos:prefLabel "Reliawind Taxonomy of Wind Turbine Components"@en .
 
-temp-vocab:TopConceptOne a skos:Concept;
-  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
-  dct:creator <https://orcid.org/0000-0002-9381-9693>;
-  skos:definition "This is a top concept which is used to collect a number of narrower concepts."@en;
-  skos:inScheme <http://www.fairdatacollective.com/template-vocabulary/>;
-  skos:narrower temp-vocab:NarrowConceptOne, temp-vocab:NarrowConceptTwo;
-  skos:prefLabel "Top Concept One"@en;
-  skos:topConceptOf <http://www.fairdatacollective.com/template-vocabulary/> .
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>
+  a skos:Concept;
+  skos:definition "A rotating machinery in which the kinetic wind energy is transformed into another form of energy."@en;
+  skos:exactMatch <http://purl.org/neat/WindTurbine>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDriveTrainModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRotorModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSupportStructure>;
+  skos:prefLabel "Wind Turbine"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components> .
 
-temp-vocab:NarrowConceptOne a skos:Concept;
-  dct:creator <https://orcid.org/0000-0001-6875-5360>;
-  skos:broader temp-vocab:TopConceptOne;
-  skos:definition "A definition of NarrowConceptOne, which has a broader concept TopConceptOne."@en;
-  skos:inScheme <http://www.fairdatacollective.com/template-vocabulary/>;
-  skos:prefLabel "Narrow Concept One"@en .
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindFarm>
+  a skos:Concept;
+  skos:definition "A group of wind turbine generators jointly operated."@en;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCollectionSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMeterologicalStation>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOperationalInfrastructure>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSubstation>;
+  skos:prefLabel "Wind Farm"@en;
+  skos:topConceptOf <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components> .
 
-temp-vocab:NarrowConceptTwo a skos:Concept;
-  dct:creator <https://orcid.org/0000-0001-6875-5360>;
-  skos:broader temp-vocab:TopConceptOne;
-  skos:definition "A definition of NarrowConceptTwo, which has a broader concept TopConceptOne."@en;
-  skos:inScheme <http://www.fairdatacollective.com/template-vocabulary/>;
-  skos:prefLabel "Narrow Concept Two"@en .
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDriveTrainModule>
+  a skos:Concept;
+  skos:altLabel "Drive Train"@en;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSet>;
+  skos:prefLabel "Drive Train Module"@en .
 
-temp-vocab:TopConceptTwo a skos:Concept;
-  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
-  dct:creator <https://orcid.org/0000-0002-9381-9693>;
-  skos:definition "This is yet another top concept which is used to collect a number of narrower concepts."@en;
-  skos:inScheme <http://www.fairdatacollective.com/template-vocabulary/>;
-  skos:narrower temp-vocab:NarrowConceptFour, temp-vocab:NarrowConceptThree;
-  skos:prefLabel "Top Concept Two"@en;
-  skos:topConceptOf <http://www.fairdatacollective.com/template-vocabulary/> .
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalModule>
+  a skos:Concept;
+  skos:altLabel "Electrical System"@en;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystem>;
+  skos:prefLabel "Electrical Module"@en .
 
-temp-vocab:NarrowConceptThree a skos:Concept;
-  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
-  dct:creator <https://orcid.org/0000-0002-9381-9693>;
-  skos:broader temp-vocab:TopConceptTwo;
-  skos:definition "A definition of NarrowConceptThree, which has a broader concept TopConceptTwo."@en;
-  skos:inScheme <http://www.fairdatacollective.com/template-vocabulary/>;
-  skos:prefLabel "Narrow Concept Three"@en .
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleModule>
+  a skos:Concept;
+  skos:altLabel "Nacelle"@en;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>;
+  skos:definition "A housing which contains the drive‑train and other elements on top of a horizontal axis wind turbine tower."@en;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliaries>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructure>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystem>;
+  skos:prefLabel "Nacelle Module"@en .
 
-temp-vocab:NarrowConceptFour a skos:Concept;
-  dct:contributor <https://orcid.org/0000-0001-6875-5360>;
-  dct:creator <https://orcid.org/0000-0002-9381-9693>;
-  skos:broader temp-vocab:TopConceptTwo;
-  skos:definition "A definition of NarrowConceptFour, which has a broader concept TopConceptTwo."@en;
-  skos:inScheme <http://www.fairdatacollective.com/template-vocabulary/>;
-  skos:prefLabel "Narrow Concept Four"@en .
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRotorModule>
+  a skos:Concept;
+  skos:altLabel "Rotor"@en, "Wind Turbine Rotor"@en;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHub>, <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystem>;
+  skos:prefLabel "Rotor Module"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSupportStructure>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindTurbine>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundation>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:prefLabel "Support Structure"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCollectionSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindFarm>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCollectionSystemCable>;
+  skos:prefLabel "Collection System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMeterologicalStation>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindFarm>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Meterological Station"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOperationalInfrastructure>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindFarm>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Operational Infrastructure"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSubstation>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsWindFarm>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGridConnection>;
+  skos:prefLabel "Substation"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDriveTrainModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearings>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>;
+  skos:prefLabel "Gearbox"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDriveTrainModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensors>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStator>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>;
+  skos:prefLabel "Generator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDriveTrainModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHighSpeedSide>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensors>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMechanicalBrake>;
+  skos:prefLabel "Main Shaft Set"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightningProtectionSystem>;
+  skos:prefLabel "Auxiliary Electrical System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAncillaryEquipment>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConditionMonitoringSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerSoftware>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:prefLabel "Control & Communication System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:prefLabel "Frequency Converter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurements>;
+  skos:prefLabel "Power Electrical System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDifferential>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicPowerPack>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTorqueConverter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsViscousCoupling>;
+  skos:prefLabel "Hydraulics System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliaries>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMeteorologicalSensors>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleSensors>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:prefLabel "Nacelle Auxiliaries"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructure>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBedplate>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorFrame>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleCover>;
+  skos:prefLabel "Nacelle Structure"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawBrake>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSensors>;
+  skos:prefLabel "Yaw System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade> a
+    skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRotorModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBladeLightningDownConductor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBladeLightningProtectionTermination>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDeIcingSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLeadingEdgeBond>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNutsAndBolts>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPaintAndCoating>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRootStructure>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSandwichShell>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSparBox>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSparCap>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSparWeb>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTrailingEdgeBond>;
+  skos:prefLabel "Blade"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHub> a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRotorModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsExitHatch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNoseCone>;
+  skos:prefLabel "Hub"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRotorModule>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSensors>;
+  skos:prefLabel "Pitch System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundation>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSupportStructure>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGravityBasedFoundation>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMonopile>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOnshore>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSpaceFrameTripod>;
+  skos:prefLabel "Foundation"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower> a
+    skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSupportStructure>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAccessEquipment>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerClimbAssist>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerMaintenanceCrane>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerNutsAndBolts>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerPaintOrCoating>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerSection>;
+  skos:prefLabel "Tower"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCollectionSystemCable>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCollectionSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Collection System Cable"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGridConnection>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSubstation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHVLink>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSubstationTransformer>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsUtilityCommunicationControl>;
+  skos:prefLabel "Grid Connection"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearings>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearingCarrier>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearingPlanet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearingShaft>;
+  skos:prefLabel "Bearings"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystemHose>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystemPump>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystemRadiator>;
+  skos:prefLabel "Gearbox Cooling System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearHollowShaft>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearPlanet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearPlanetCarrier>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearRing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearSpur>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearSun>;
+  skos:prefLabel "Gears"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingBushing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingCase>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingMounting>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingTorqueArmSystem>;
+  skos:prefLabel "Housing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemHose>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemMotor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemPrimaryFilter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemPump>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemReservoir>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemSeal>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemSecondaryFilter>;
+  skos:prefLabel "Gearbox Lubrication System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearbox>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorDebris>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorOilLevel>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorPressure1>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorPressure2>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorTemperature>;
+  skos:prefLabel "Gearbox Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemFan>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemFilter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemHose>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemRadiator>;
+  skos:prefLabel "Generator Cooling System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystemPump>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystemReservoir>;
+  skos:prefLabel "Generator Lubrication System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensorEncoder>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensorTemperature>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensorWattmeter>;
+  skos:prefLabel "Generator Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorCommutator>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorExciter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorLamination>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorResistanceController>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorSlipRing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorWinding>;
+  skos:prefLabel "Generator Rotor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStatorLamination>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStatorMagnet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStatorWinding>;
+  skos:prefLabel "Generator Stator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGenerator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalFrontBearing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalHousing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalRearBearing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalShaft>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalSilentBlock>;
+  skos:prefLabel "Generator Structural and Mechanical"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHighSpeedSide>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideCoupling>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideRotorLock>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideShaft>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideTransmissionShaft>;
+  skos:prefLabel "High Speed Side"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideAxialBearing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideCompressionCoupling>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideConnectorPlate>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideMainBearingSeal>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideMainBearingTemperatureSensor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideMainShaft>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideRadialBearing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideRotorLock>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideSlipRing>;
+  skos:prefLabel "Low Speed Side"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMechanicalBrake>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakeCaliper>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakeDisk>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakePad>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakeTranmissionLock>;
+  skos:prefLabel "Mechanical Brake"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensorHighSpeed>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensorLowSpeed>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensorPosition>;
+  skos:prefLabel "Main ShaftSet Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalService24DcFeeder>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceAuxiliaryTransformer>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceBreaker>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceCabinet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceFan>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceFuse>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceGridProtectionRelay>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceLight>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceMechanicalSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServicePowerPoint>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceProtectionCabinet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServicePushbutton>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceRelay>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceSpaceHeater>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceSurgeArrester>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceThermalProtection>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceUps>;
+  skos:prefLabel "Electrical Services"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightningProtectionSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Lightning Protection System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAncillaryEquipment>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentBreaker>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentCabinetTemperatureSensor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentCable>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentContactor>;
+  skos:prefLabel "Ancillary Equipment"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemAnalogIOUnit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemDigitalIOUnit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemEthernetModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemFieldBusMaster>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemFieldBusSlave>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemFrequencyUnit>;
+  skos:prefLabel "Communication System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConditionMonitoringSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemConditionCable>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemDataLogger>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemProtocolAdapterCardForDataLogger>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemSensor>;
+  skos:prefLabel "Condition Monitoring System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareControllerPowerSupply>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareCpu>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareInternalCommunicationSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareMainIOUnit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareWatchDogUnit>;
+  skos:prefLabel "Controller Hardware"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerSoftware>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerSoftwareClosedLoopControl>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerSoftwareSupervisoryControl>;
+  skos:prefLabel "Controller Software"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainEmergencyButton>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainMaxSpeedSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainPowerSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainShortCircuitSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainVibrationSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainWatchDogSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainWind-UpSwitch>;
+  skos:prefLabel "Safety Chain"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverter>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesAuxiliaryPowerSupply>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCabinet>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCabinetHeatingSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCabinetSensor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCommunicationAndInterfaceUnit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesControlBoard>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesGeneratorSideFan>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesGridSideFan>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesMeasurementUnit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesPowerSupply>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesPowerSupply24v>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesTachometerAdapter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesThermostat>;
+  skos:prefLabel "Converter Auxiliaries"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverter>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusBranchingUnit>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusCapacitor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusContactor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGeneratorSideConverter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGeneratorSidePowerModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGridSideConverter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGridSidePowerModule>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusInductor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusLoadSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusPre-ChargeUnit>;
+  skos:prefLabel "Converter Power Bus"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverter>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningCommonModeFilter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningCrowbar>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningDcChopper>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningGeneratorSideFilter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningLineFilterAssembly>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningVoltageLimiterUnit>;
+  skos:prefLabel "Power Conditioning"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurements>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurementsTa>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurementsTv>;
+  skos:prefLabel "Measurements"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitCables>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMachineContactor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMachineTransformer>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMvBusbarOrIsolator>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMvSwitchgear>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitSoftStartElectronics>;
+  skos:prefLabel "Power Circuit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicPowerPack>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackFilter>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackMotor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackPressureValve>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackPump>;
+  skos:prefLabel "Hydraulic Power Pack"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorBushing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorCylinder>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorHoseOrFitting>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorHydraulicLinearDrive>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorLimitSwitch>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorLinkage>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorMiscellaneousHydraulicsSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorPositionController>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorProportionalValve>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorPump>;
+  skos:prefLabel "Actuator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTorqueConverter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Torque Converter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDifferential>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Differential"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsViscousCoupling>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Viscous Coupling"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMeteorologicalSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesMeteorologicalSensorAnemometer>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesMeteorologicalSensorWindVane>;
+  skos:prefLabel "Meteorological Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSensorEmergencyVibrationSensor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSensorYawEncoder>;
+  skos:prefLabel "Nacelle Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemBeacon>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemDownConductor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemFallArrester>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemFirefightingSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemLightningProtectionTermination>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemNacelleCoverMetallicMesh>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemServiceCrane>;
+  skos:prefLabel "Safety System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBedplate>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructure>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureBedplateBolt>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureBedplateCastOrWeldedStructure>;
+  skos:prefLabel "Bedplate"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleCover>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructure>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureCoverFibreglass>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureCoverHatch>;
+  skos:prefLabel "Cover"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorFrame>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructure>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureGeneratorFrameBolt>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureGeneratorFrameCastOrWeldedStructure>;
+  skos:prefLabel "Generator Frame"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawBrake>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakeCaliper>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakeDisc>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakeHose>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakePath>;
+  skos:prefLabel "Yaw Brake"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveBearing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveDamper>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveGearbox>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveMotor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDrivePinion>;
+  skos:prefLabel "Yaw Drive"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemSensorEncoder>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemSensorWind-UpCounter>;
+  skos:prefLabel "Yaw Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBladeLightningProtectionTermination>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Blade Lightning Protection Termination"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBladeLightningDownConductor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Blade Lightning Down-conductor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsDeIcingSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "De-Icing System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLeadingEdgeBond>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Leading Edge Bond"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNutsAndBolts>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Nuts And Bolts"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPaintAndCoating>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Paint And Coating"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsRootStructure>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Root Structure"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSandwichShell>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Sandwich Shell"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSparBox>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Spar Box"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSparCap>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Spar Cap"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSparWeb>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Spar Web"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTrailingEdgeBond>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBlade>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Trailing Edge Bond"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsExitHatch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHub>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Exit Hatch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNoseCone>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHub>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Nose Cone"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetBattery>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetBatteryCharger>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetHeater>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetLocalController>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetSwitchboard>;
+  skos:prefLabel "Pitch Cabinet"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveBearing>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveGearbox>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotor>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotorCooling>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotorCoolingSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotorDrive>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDrivePinion>;
+  skos:prefLabel "Pitch Drive"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSensors>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemSensorPositionEncoder>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemSensorTemperature>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemSensorVoltmeter>;
+  skos:prefLabel "Pitch Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGravityBasedFoundation>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationGravityBasedConcrete>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationGravityBasedSteelReinforcement>;
+  skos:prefLabel "Gravity Based Foundation"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMonopile>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationMonopileCorrosionProtection>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationMonopilePile>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationMonopileTransitionPiece>;
+  skos:prefLabel "Monopile"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOnshore>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshoreConcrete>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshoreNutsAndBolts>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshorePile>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshoreSteelReinforcement>;
+  skos:prefLabel "Onshore"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSpaceFrameTripod>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationSpaceFrameOrTripodCorrosionProtection>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationSpaceFrameOrTripodPiles>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationSpaceFrameOrTripodStructures>;
+  skos:prefLabel "Space Frame / Tripod"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAccessEquipment>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerAccessEquipmentLadder>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerAccessEquipmentLandingPad>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerAccessEquipmentLigthningProtection>;
+  skos:prefLabel "Access Equipment"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHVLink> a
+    skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGridConnection>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "HV Link"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSubstationTransformer>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGridConnection>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Substation Transformer"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsUtilityCommunicationControl>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGridConnection>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Utility Communication & Control"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearingCarrier>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearings>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Carrier Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearingPlanet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearings>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Planet Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearingShaft>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxBearings>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Shaft Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystemHose>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hose"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystemPump>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pump"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystemRadiator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Radiator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearHollowShaft>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hollow Shaft"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearPlanetCarrier>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Planet Carrier"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearPlanet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Planet Gear"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearRing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Ring Gear"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearSpur>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Spur Gear"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGearSun>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxGears>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Sun Gear"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingBushing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousing>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Bushing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingCase>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousing>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Case"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingMounting>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousing>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Mounting"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousingTorqueArmSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxHousing>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Torque Arm System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemHose>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hose"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemMotor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Motor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemPrimaryFilter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Primary Filter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemPump>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pump"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemReservoir>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Reservoir"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemSeal>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Seal"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystemSecondaryFilter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Secondary Filter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorDebris>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Debris"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorOilLevel>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Oil Level"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorPressure1>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pressure 1"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorPressure2>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pressure 2"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensorTemperature>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGearboxSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Temperature"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemFan>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cooling Fan"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemFilter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Filter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemHose>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hose"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystemRadiator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorCoolingSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Radiator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystemPump>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pump"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystemReservoir>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorLubricationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Reservoir"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorCommutator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Commutator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorExciter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Exciter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorResistanceController>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Resistance Controller"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorLamination>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Rotor Lamination"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorWinding>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Rotor Winding"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotorSlipRing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorRotor>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Slip Ring"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensorTemperature>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Core Temperature Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensorEncoder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Encoder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensorWattmeter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Wattmeter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStatorMagnet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Magnet"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStatorLamination>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Stator Lamination"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStatorWinding>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Stator Winding"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalFrontBearing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Front Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalHousing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Housing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalRearBearing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Rear Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalShaft>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Shaft"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralAndMechanicalSilentBlock>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorStructuralMechanical>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Silent Block"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideCoupling>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHighSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Coupling"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideRotorLock>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHighSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Rotor Lock"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideShaft>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHighSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Shaft"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetHighSpeedSideTransmissionShaft>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHighSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Transmission Shaft"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideAxialBearing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Axial Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideCompressionCoupling>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Compression Coupling"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideConnectorPlate>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Connector Plate"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideMainBearingSeal>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Main Bearing Seal"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideMainBearingTemperatureSensor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Main Bearing Temperature Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideMainShaft>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Main Shaft"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideRadialBearing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Radial Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideRotorLock>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Rotor Lock"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetLowSpeedSideSlipRing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLowSpeedSide>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Slip Ring"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakeCaliper>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMechanicalBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Caliper"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakeDisk>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMechanicalBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Disk"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakePad>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMechanicalBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pad"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetMechanicalBrakeTranmissionLock>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMechanicalBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Tranmission Lock"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensorHighSpeed>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "High Speed Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensorLowSpeed>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Low Speed Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensorPosition>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMainShaftSetSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Position Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalService24DcFeeder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "24 Dc Feeder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceAuxiliaryTransformer>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Auxiliary Transformer"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceBreaker>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Breaker"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceCabinet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cabinet"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceFan>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Fan"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceFuse>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Fuse"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceGridProtectionRelay>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Grid Protection Relay"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceLight>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Light"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceMechanicalSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Mechanical Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServicePowerPoint>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Power Point"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceProtectionCabinet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Protection Cabinet"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServicePushbutton>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pushbutton"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceRelay>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Relay"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceSpaceHeater>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Space Heater"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceSurgeArrester>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Surge Arrester"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceThermalProtection>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Thermal Protection"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemElectricalServiceUps>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsElectricalServices>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Ups"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemAirTermination>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Air Termination"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemBondingElement>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Bonding Element"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemEarthConnector>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Earth Connector"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemEarthTermination>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Earth Termination"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemSlidingContact>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Sliding Contact"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemSparkGapSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Spark Gap System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemSurgeArrester>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Surge Arrester"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentBreaker>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAncillaryEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Breaker"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentCabinetTemperatureSensor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAncillaryEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cabinet Temperature Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentCable>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAncillaryEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cable"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemAncillaryEquipmentContactor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAncillaryEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Contactor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemAnalogIOUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Analog I/O Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemDigitalIOUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Digital I/O Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemEthernetModule>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Ethernet Module"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemFieldBusMaster>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Field Bus Master"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemFieldBusSlave>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Field Bus Slave"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemCommunicationSystemFrequencyUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsCommunicationSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Frequency Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemConditionCable>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConditionMonitoringSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Condition Cables"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemDataLogger>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConditionMonitoringSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Data Logger"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemProtocolAdapterCardForDataLogger>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConditionMonitoringSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Protocol Adapter Card For Data Logger"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemConditionMonitoringSystemSensor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConditionMonitoringSystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Sensors"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareControllerPowerSupply>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Controller Power Supply"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareCpu>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cpu"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareInternalCommunicationSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Internal Communication System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareMainIOUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Main I/O Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerHardwareWatchDogUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerHardware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Watch Dog Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerSoftwareClosedLoopControl>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerSoftware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Closed Loop Control Software"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemControllerSoftwareSupervisoryControl>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControllerSoftware>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Supervisory Control Software"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainEmergencyButton>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Emergency Button"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainMaxSpeedSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Max Speed Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainPowerSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Power Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainShortCircuitSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Short Circuit Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainVibrationSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Vibration Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainWatchDogSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Watch Dog Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsControlAndCommunicationSystemSafetyChainWind-UpSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetyChain>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Wind-Up Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesAuxiliaryPowerSupply>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Auxiliary Power Supply"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCabinet>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cabinet"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCabinetHeatingSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cabinet Heating System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCabinetSensor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cabinet Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesCommunicationAndInterfaceUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Communication And Interface Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesControlBoard>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Control Board"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesGeneratorSideFan>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Generator Side Fan"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesGridSideFan>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Grid Side Fan"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesMeasurementUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Measurement Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesPowerSupply>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Power Supply"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesPowerSupply24v>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Power Supply 24v"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesTachometerAdapter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Tachometer Adapter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterAuxiliariesThermostat>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterAuxiliaries>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Thermostat"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusBranchingUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Branching Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusCapacitor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Capacitor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusContactor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Contactor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGeneratorSideConverter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Generator Side Converter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGeneratorSidePowerModule>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Generator Side Power Module"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGridSideConverter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Grid Side Converter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusGridSidePowerModule>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Grid Side Power Module"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusInductor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Inductor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusLoadSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Load Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterConverterPowerBusPre-ChargeUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsConverterPowerBus>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pre-Charge Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningCommonModeFilter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Common Mode Filter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningCrowbar>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Crowbar"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningDcChopper>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Dc Chopper"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningGeneratorSideFilter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Generator Side Filter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningLineFilterAssembly>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Line Filter Assembly"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFrequencyConverterPowerConditioningVoltageLimiterUnit>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerConditioning>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Voltage Limiter Unit"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurementsTa>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurements>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Ta"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurementsTv>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemMeasurements>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Tv"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitCables>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cables"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMachineContactor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Machine Contactor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMachineTransformer>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Machine Transformer"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMvBusbarOrIsolator>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Mv Busbar / Isolator"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitMvSwitchgear>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Mv Switchgear"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerElectricalSystemPowerCircuitSoftStartElectronics>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPowerCircuit>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Soft Start Electronics"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackMotor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicPowerPack>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Motor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackPump>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicPowerPack>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pump"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackPressureValve>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicPowerPack>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pressure Valve"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemHydraulicPowerPackFilter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicPowerPack>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Filter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorBushing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Bushing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorCylinder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cylinder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorHoseOrFitting>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hose / Fitting"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorHydraulicLinearDrive>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hydraulic Linear Drive"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorLimitSwitch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Limit Switch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorLinkage>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Linkage"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorMiscellaneousHydraulicsSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Miscellaneous Hydraulics System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorPositionController>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Position Controller"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorProportionalValve>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Proportional Valve"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsHydraulicsSystemActuatorPump>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsActuator>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pump"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesMeteorologicalSensorAnemometer>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMeteorologicalSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Anemometer"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesMeteorologicalSensorWindVane>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMeteorologicalSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Wind Vane"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSensorEmergencyVibrationSensor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Emergency Vibration Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSensorYawEncoder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Encoder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemBeacon>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Beacon"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemDownConductor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Down Conductor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemFallArrester>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Fall Arrester"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemFirefightingSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Firefighting System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemNacelleCoverMetallicMesh>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Nacelle Cover Metallic Mesh"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemLightningProtectionTermination>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Lightning Protection Termination"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleAuxiliariesSafetySystemServiceCrane>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSafetySystem>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Service Crane"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureBedplateBolt>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBedplate>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Bolts"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureBedplateCastOrWeldedStructure>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsBedplate>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cast or Welded Structure"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureCoverFibreglass>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleCover>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Fibreglass"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureCoverHatch>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleCover>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Hatch"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureGeneratorFrameBolt>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorFrame>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Bolts"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsNacelleStructureGeneratorFrameCastOrWeldedStructure>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGeneratorFrame>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Cast or Welded Structure"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakeCaliper>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Brake Calipers"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakeDisc>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Brake Disc"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakeHose>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Brake Hoses"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemBrakePath>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawBrake>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Brake Paths"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveDamper>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Damper"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveBearing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveGearbox>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Gearbox"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDriveMotor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Motor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemDrivePinion>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Pinion"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemSensorWind-UpCounter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Wind-Up Counter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSystemSensorEncoder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsYawSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Yaw Encoder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetBattery>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Battery"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetBatteryCharger>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Battery Charger"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetHeater>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Heater"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetLocalController>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Local Controller"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchCabinetSwitchboard>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchCabinet>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Switchboard"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotor>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Motor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotorCooling>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Motor Cooling"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotorCoolingSystem>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Motor Cooling System"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveMotorDrive>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Motor Drive"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDrivePinion>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pinion"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveBearing>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pitch Bearing"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemPitchDriveGearbox>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchDrive>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pitch Gearbox"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemSensorPositionEncoder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Position Encoder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemSensorTemperature>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Temperature Sensor"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSystemSensorVoltmeter>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsPitchSensors>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Voltmeter"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationGravityBasedConcrete>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGravityBasedFoundation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Concrete"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationGravityBasedSteelReinforcement>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsGravityBasedFoundation>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Steel Reinforcement"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationMonopileCorrosionProtection>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMonopile>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Corrosion Protection"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationMonopilePile>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMonopile>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Pile"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationMonopileTransitionPiece>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsMonopile>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Transition Piece"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshoreConcrete>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOnshore>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Concrete"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshoreNutsAndBolts>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOnshore>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Nuts & Bolts"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshorePile>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOnshore>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Piles"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationOnshoreSteelReinforcement>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsOnshore>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Steel Reinforcement"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationSpaceFrameOrTripodCorrosionProtection>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSpaceFrameTripod>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Corrosion Protection"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationSpaceFrameOrTripodPiles>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSpaceFrameTripod>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Piles"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsFoundationSpaceFrameOrTripodStructures>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsSpaceFrameTripod>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Structures"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerAccessEquipmentLadder>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAccessEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Ladder"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerAccessEquipmentLandingPad>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAccessEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Landing Pad"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerAccessEquipmentLigthningProtection>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAccessEquipment>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Ligthning Protection"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerClimbAssist>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Climb Assist"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerMaintenanceCrane>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Maintenance Crane"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerNutsAndBolts>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Nuts & Bolts"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerPaintOrCoating>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Paint/Coating"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTowerSection>
+  a skos:Concept;
+  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsTower>;
+  skos:inScheme <https://www.ieawindtask43.org/reliawind-taxonomy-wt-components>;
+  skos:prefLabel "Tower Section"@en .
+
+<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsLightning\u0020Protection\u0020System>
+  skos:narrower <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemAirTermination>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemBondingElement>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemEarthConnector>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemEarthTermination>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemSlidingContact>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemSparkGapSystem>,
+    <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-componentsAuxiliaryElectricalSystemLightningProtectionSystemSurgeArrester> .
