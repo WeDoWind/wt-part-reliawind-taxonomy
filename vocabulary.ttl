@@ -355,6 +355,10 @@ reliatax:ElectricalServices a skos:Concept;
 reliatax:LightningProtectionSystem a skos:Concept;
   skos:broader reliatax:AuxiliaryElectricalSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
+  skos:narrower reliatax:AuxiliaryElectricalSystemLightningProtectionSystemAirTermination,
+    reliatax:AuxiliaryElectricalSystemLightningProtectionSystemBondingElement, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthConnector,
+    reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthTermination, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSlidingContact,
+    reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSparkGapSystem, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSurgeArrester;
   skos:prefLabel "Lightning Protection System"@en .
 
 reliatax:AncillaryEquipment a skos:Concept;
@@ -1123,37 +1127,37 @@ reliatax:AuxiliaryElectricalSystemElectricalServiceUps a skos:Concept;
   skos:prefLabel "Ups"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemAirTermination a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Air Termination"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemBondingElement a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Bonding Element"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthConnector a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Earth Connector"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthTermination a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Earth Termination"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSlidingContact a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Sliding Contact"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSparkGapSystem a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Spark Gap System"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSurgeArrester a skos:Concept;
-  skos:broader <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>;
+  skos:broader reliatax:LightningProtectionSystem;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Surge Arrester"@en .
 
@@ -1869,9 +1873,3 @@ reliatax:TowerSection a skos:Concept;
   skos:broader reliatax:Tower;
   skos:inScheme <https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/>;
   skos:prefLabel "Tower Section"@en .
-
-<https://www.ieawindtask43.org/ontoforge/reliawind-taxonomy-wt-components/Lightning\u0020Protection\u0020System>
-  skos:narrower reliatax:AuxiliaryElectricalSystemLightningProtectionSystemAirTermination,
-    reliatax:AuxiliaryElectricalSystemLightningProtectionSystemBondingElement, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthConnector,
-    reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthTermination, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSlidingContact,
-    reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSparkGapSystem, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSurgeArrester .
