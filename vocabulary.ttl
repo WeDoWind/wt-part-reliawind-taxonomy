@@ -9,7 +9,7 @@
 @prefix qb: <http://purl.org/linked-data/cube#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix reliatax: <http://purl.ontoforge.org/wedo/reilatax/> .
+@prefix reliatax: <http://purl.ontoforge.org/wedo/reliatax/> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -17,7 +17,7 @@
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://purl.ontoforge.org/wedo/reilatax/> a skos:ConceptScheme;
+<http://purl.ontoforge.org/wedo/reliatax/> a skos:ConceptScheme;
   dct:contributor <https://orcid.org/0000-0002-6570-6966>;
   dct:creator <https://orcid.org/0000-0002-6570-6966>;
   dct:description "A taxonomical organization of wind turbine compenents used within Reliawind project."@en;
@@ -35,26 +35,26 @@ reliatax:WindTurbine a skos:Concept;
   reliatax:hierarchyLevel "System"@en;
   skos:definition "A rotating machinery in which the kinetic wind energy is transformed into another form of energy."@en;
   skos:exactMatch <http://purl.org/neat/WindTurbine>;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:DriveTrainModule, reliatax:ElectricalModule, reliatax:NacelleModule,
     reliatax:RotorModule, reliatax:SupportStructure;
   skos:prefLabel "Wind Turbine"@en;
-  skos:topConceptOf <http://purl.ontoforge.org/wedo/reilatax/> .
+  skos:topConceptOf <http://purl.ontoforge.org/wedo/reliatax/> .
 
 reliatax:WindFarm a skos:Concept;
   reliatax:hierarchyLevel "System"@en;
   skos:definition "A group of wind turbine generators jointly operated."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:CollectionSystem, reliatax:MeterologicalStation, reliatax:OperationalInfrastructure,
     reliatax:Substation;
   skos:prefLabel "Wind Farm"@en;
-  skos:topConceptOf <http://purl.ontoforge.org/wedo/reilatax/> .
+  skos:topConceptOf <http://purl.ontoforge.org/wedo/reliatax/> .
 
 reliatax:DriveTrainModule a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:altLabel "Drive Train"@en;
   skos:broader reliatax:WindTurbine;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:Gearbox, reliatax:Generator, reliatax:MainShaftSet;
   skos:prefLabel "Drive Train Module"@en .
 
@@ -62,7 +62,7 @@ reliatax:ElectricalModule a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:altLabel "Electrical System"@en;
   skos:broader reliatax:WindTurbine;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:AuxiliaryElectricalSystem, reliatax:ControlCommunicationSystem,
     reliatax:FrequencyConverter, reliatax:PowerElectricalSystem;
   skos:prefLabel "Electrical Module"@en .
@@ -72,7 +72,7 @@ reliatax:NacelleModule a skos:Concept;
   skos:altLabel "Nacelle"@en;
   skos:broader reliatax:WindTurbine;
   skos:definition "A housing which contains the drive‑train and other elements on top of a horizontal axis wind turbine tower."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:HydraulicsSystem, reliatax:NacelleAuxiliaries, reliatax:NacelleStructure,
     reliatax:YawSystem;
   skos:prefLabel "Nacelle Module"@en .
@@ -81,21 +81,21 @@ reliatax:RotorModule a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:altLabel "Rotor"@en, "Wind Turbine Rotor"@en;
   skos:broader reliatax:WindTurbine;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:Blade, reliatax:Hub, reliatax:PitchSystem;
   skos:prefLabel "Rotor Module"@en .
 
 reliatax:SupportStructure a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:broader reliatax:WindTurbine;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:Foundation, reliatax:Tower;
   skos:prefLabel "Support Structure"@en .
 
 reliatax:CollectionSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:broader reliatax:WindFarm;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:CollectionSystemCable;
   skos:prefLabel "Collection System"@en .
 
@@ -103,27 +103,27 @@ reliatax:MeterologicalStation a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:broader reliatax:WindFarm;
   skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept as a Sub-System, an Assembly, a Sub-assembly, and a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Meterological Station"@en .
 
 reliatax:OperationalInfrastructure a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:broader reliatax:WindFarm;
   skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept as a Sub-System, an Assembly, a Sub-assembly, and a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Operational Infrastructure"@en .
 
 reliatax:Substation a skos:Concept;
   reliatax:hierarchyLevel "Sub-System"@en;
   skos:broader reliatax:WindFarm;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GridConnection;
   skos:prefLabel "Substation"@en .
 
 reliatax:Gearbox a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:DriveTrainModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxBearings, reliatax:GearboxCoolingSystem, reliatax:GearboxGears,
     reliatax:GearboxHousing, reliatax:GearboxLubricationSystem, reliatax:GearboxSensors;
   skos:prefLabel "Gearbox"@en .
@@ -131,7 +131,7 @@ reliatax:Gearbox a skos:Concept;
 reliatax:Generator a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:DriveTrainModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorCoolingSystem, reliatax:GeneratorLubricationSystem,
     reliatax:GeneratorRotor, reliatax:GeneratorSensors, reliatax:GeneratorStator, reliatax:GeneratorStructuralMechanical;
   skos:prefLabel "Generator"@en .
@@ -139,7 +139,7 @@ reliatax:Generator a skos:Concept;
 reliatax:MainShaftSet a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:DriveTrainModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:HighSpeedSide, reliatax:LowSpeedSide, reliatax:MainShaftSetSensors,
     reliatax:MechanicalBrake;
   skos:prefLabel "Main Shaft Set"@en .
@@ -147,14 +147,14 @@ reliatax:MainShaftSet a skos:Concept;
 reliatax:AuxiliaryElectricalSystem a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:ElectricalModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ElectricalServices, reliatax:LightningProtectionSystem;
   skos:prefLabel "Auxiliary Electrical System"@en .
 
 reliatax:ControlCommunicationSystem a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:ElectricalModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:AncillaryEquipment, reliatax:CommunicationSystem, reliatax:ConditionMonitoringSystem,
     reliatax:ControllerHardware, reliatax:ControllerSoftware, reliatax:SafetyChain;
   skos:prefLabel "Control & Communication System"@en .
@@ -162,21 +162,21 @@ reliatax:ControlCommunicationSystem a skos:Concept;
 reliatax:FrequencyConverter a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:ElectricalModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ConverterAuxiliaries, reliatax:ConverterPowerBus, reliatax:PowerConditioning;
   skos:prefLabel "Frequency Converter"@en .
 
 reliatax:PowerElectricalSystem a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:ElectricalModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PowerCircuit, reliatax:PowerElectricalSystemMeasurements;
   skos:prefLabel "Power Electrical System"@en .
 
 reliatax:HydraulicsSystem a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:NacelleModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:Actuator, reliatax:Differential, reliatax:HydraulicPowerPack,
     reliatax:TorqueConverter, reliatax:ViscousCoupling;
   skos:prefLabel "Hydraulics System"@en .
@@ -184,28 +184,28 @@ reliatax:HydraulicsSystem a skos:Concept;
 reliatax:NacelleAuxiliaries a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:NacelleModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:MeteorologicalSensors, reliatax:NacelleSensors, reliatax:SafetySystem;
   skos:prefLabel "Nacelle Auxiliaries"@en .
 
 reliatax:NacelleStructure a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:NacelleModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:Bedplate, reliatax:GeneratorFrame, reliatax:NacelleCover;
   skos:prefLabel "Nacelle Structure"@en .
 
 reliatax:YawSystem a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:NacelleModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:YawBrake, reliatax:YawDrive, reliatax:YawSensors;
   skos:prefLabel "Yaw System"@en .
 
 reliatax:Blade a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:RotorModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:BladeLightningDownConductor, reliatax:BladeLightningProtectionTermination,
     reliatax:DeIcingSystem, reliatax:LeadingEdgeBond, reliatax:NutsAndBolts, reliatax:PaintAndCoating,
     reliatax:RootStructure, reliatax:SandwichShell, reliatax:SparBox, reliatax:SparCap,
@@ -215,21 +215,21 @@ reliatax:Blade a skos:Concept;
 reliatax:Hub a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:RotorModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ExitHatch, reliatax:NoseCone;
   skos:prefLabel "Hub"@en .
 
 reliatax:PitchSystem a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:RotorModule;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PitchCabinet, reliatax:PitchDrive, reliatax:PitchSensors;
   skos:prefLabel "Pitch System"@en .
 
 reliatax:Foundation a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:SupportStructure;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GravityBasedFoundation, reliatax:Monopile, reliatax:Onshore,
     reliatax:SpaceFrameTripod;
   skos:prefLabel "Foundation"@en .
@@ -238,7 +238,7 @@ reliatax:Tower a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:SupportStructure;
   skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept both as an Assembly and a Sub-assembly."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:AccessEquipment, reliatax:TowerClimbAssist, reliatax:TowerMaintenanceCrane,
     reliatax:TowerNutsAndBolts, reliatax:TowerPaintOrCoating, reliatax:TowerSection;
   skos:prefLabel "Tower"@en .
@@ -247,27 +247,27 @@ reliatax:CollectionSystemCable a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:CollectionSystem;
   skos:editorialNote "Reliawind Taxonomy ambiguously classifies this concept both as an Assembly and a Sub-assembly."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cable"@en .
 
 reliatax:GridConnection a skos:Concept;
   reliatax:hierarchyLevel "Assembly"@en;
   skos:broader reliatax:Substation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:HVLink, reliatax:SubstationTransformer, reliatax:UtilityCommunicationControl;
   skos:prefLabel "Grid Connection"@en .
 
 reliatax:GearboxBearings a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Gearbox;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxBearingCarrier, reliatax:GearboxBearingPlanet, reliatax:GearboxBearingShaft;
   skos:prefLabel "Bearings"@en .
 
 reliatax:GearboxCoolingSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Gearbox;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxCoolingSystemHose, reliatax:GearboxCoolingSystemPump,
     reliatax:GearboxCoolingSystemRadiator;
   skos:prefLabel "Cooling System"@en .
@@ -275,7 +275,7 @@ reliatax:GearboxCoolingSystem a skos:Concept;
 reliatax:GearboxGears a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Gearbox;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxGearHollowShaft, reliatax:GearboxGearPlanet, reliatax:GearboxGearPlanetCarrier,
     reliatax:GearboxGearRing, reliatax:GearboxGearSpur, reliatax:GearboxGearSun;
   skos:prefLabel "Gears"@en .
@@ -283,7 +283,7 @@ reliatax:GearboxGears a skos:Concept;
 reliatax:GearboxHousing a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Gearbox;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxHousingBushing, reliatax:GearboxHousingCase, reliatax:GearboxHousingMounting,
     reliatax:GearboxHousingTorqueArmSystem;
   skos:prefLabel "Housing"@en .
@@ -291,7 +291,7 @@ reliatax:GearboxHousing a skos:Concept;
 reliatax:GearboxLubricationSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Gearbox;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxLubricationSystemHose, reliatax:GearboxLubricationSystemMotor,
     reliatax:GearboxLubricationSystemPrimaryFilter, reliatax:GearboxLubricationSystemPump,
     reliatax:GearboxLubricationSystemReservoir, reliatax:GearboxLubricationSystemSeal,
@@ -301,7 +301,7 @@ reliatax:GearboxLubricationSystem a skos:Concept;
 reliatax:GearboxSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Gearbox;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GearboxSensorDebris, reliatax:GearboxSensorOilLevel, reliatax:GearboxSensorPressure1,
     reliatax:GearboxSensorPressure2, reliatax:GearboxSensorTemperature;
   skos:prefLabel "Sensors"@en .
@@ -309,7 +309,7 @@ reliatax:GearboxSensors a skos:Concept;
 reliatax:GeneratorCoolingSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Generator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorCoolingSystemFan, reliatax:GeneratorCoolingSystemFilter,
     reliatax:GeneratorCoolingSystemHose, reliatax:GeneratorCoolingSystemRadiator;
   skos:prefLabel "Cooling System"@en .
@@ -317,14 +317,14 @@ reliatax:GeneratorCoolingSystem a skos:Concept;
 reliatax:GeneratorLubricationSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Generator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorLubricationSystemPump, reliatax:GeneratorLubricationSystemReservoir;
   skos:prefLabel "Lubrication System"@en .
 
 reliatax:GeneratorSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Generator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorSensorEncoder, reliatax:GeneratorSensorTemperature,
     reliatax:GeneratorSensorWattmeter;
   skos:prefLabel "Sensors"@en .
@@ -332,7 +332,7 @@ reliatax:GeneratorSensors a skos:Concept;
 reliatax:GeneratorRotor a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Generator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorRotorCommutator, reliatax:GeneratorRotorExciter, reliatax:GeneratorRotorLamination,
     reliatax:GeneratorRotorResistanceController, reliatax:GeneratorRotorSlipRing, reliatax:GeneratorRotorWinding;
   skos:prefLabel "Rotor"@en .
@@ -340,7 +340,7 @@ reliatax:GeneratorRotor a skos:Concept;
 reliatax:GeneratorStator a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Generator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorStatorLamination, reliatax:GeneratorStatorMagnet,
     reliatax:GeneratorStatorWinding;
   skos:prefLabel "Stator"@en .
@@ -348,7 +348,7 @@ reliatax:GeneratorStator a skos:Concept;
 reliatax:GeneratorStructuralMechanical a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Generator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:GeneratorStructuralAndMechanicalFrontBearing, reliatax:GeneratorStructuralAndMechanicalHousing,
     reliatax:GeneratorStructuralAndMechanicalRearBearing, reliatax:GeneratorStructuralAndMechanicalShaft,
     reliatax:GeneratorStructuralAndMechanicalSilentBlock;
@@ -357,7 +357,7 @@ reliatax:GeneratorStructuralMechanical a skos:Concept;
 reliatax:HighSpeedSide a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:MainShaftSet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:MainShaftSetHighSpeedSideCoupling, reliatax:MainShaftSetHighSpeedSideRotorLock,
     reliatax:MainShaftSetHighSpeedSideShaft, reliatax:MainShaftSetHighSpeedSideTransmissionShaft;
   skos:prefLabel "High Speed Side"@en .
@@ -365,7 +365,7 @@ reliatax:HighSpeedSide a skos:Concept;
 reliatax:LowSpeedSide a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:MainShaftSet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:MainShaftSetLowSpeedSideAxialBearing, reliatax:MainShaftSetLowSpeedSideCompressionCoupling,
     reliatax:MainShaftSetLowSpeedSideConnectorPlate, reliatax:MainShaftSetLowSpeedSideMainBearingSeal,
     reliatax:MainShaftSetLowSpeedSideMainBearingTemperatureSensor, reliatax:MainShaftSetLowSpeedSideMainShaft,
@@ -376,7 +376,7 @@ reliatax:LowSpeedSide a skos:Concept;
 reliatax:MechanicalBrake a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:MainShaftSet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:MainShaftSetMechanicalBrakeCaliper, reliatax:MainShaftSetMechanicalBrakeDisk,
     reliatax:MainShaftSetMechanicalBrakePad, reliatax:MainShaftSetMechanicalBrakeTranmissionLock;
   skos:prefLabel "Mechanical Brake"@en .
@@ -384,7 +384,7 @@ reliatax:MechanicalBrake a skos:Concept;
 reliatax:MainShaftSetSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:MainShaftSet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:MainShaftSetSensorHighSpeed, reliatax:MainShaftSetSensorLowSpeed,
     reliatax:MainShaftSetSensorPosition;
   skos:prefLabel "Sensors"@en .
@@ -392,7 +392,7 @@ reliatax:MainShaftSetSensors a skos:Concept;
 reliatax:ElectricalServices a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:AuxiliaryElectricalSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:AuxiliaryElectricalSystemElectricalService24DcFeeder, reliatax:AuxiliaryElectricalSystemElectricalServiceAuxiliaryTransformer,
     reliatax:AuxiliaryElectricalSystemElectricalServiceBreaker, reliatax:AuxiliaryElectricalSystemElectricalServiceCabinet,
     reliatax:AuxiliaryElectricalSystemElectricalServiceFan, reliatax:AuxiliaryElectricalSystemElectricalServiceFuse,
@@ -407,7 +407,7 @@ reliatax:ElectricalServices a skos:Concept;
 reliatax:LightningProtectionSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:AuxiliaryElectricalSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:AuxiliaryElectricalSystemLightningProtectionSystemAirTermination,
     reliatax:AuxiliaryElectricalSystemLightningProtectionSystemBondingElement, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthConnector,
     reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthTermination, reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSlidingContact,
@@ -417,7 +417,7 @@ reliatax:LightningProtectionSystem a skos:Concept;
 reliatax:AncillaryEquipment a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:ControlCommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ControlAndCommunicationSystemAncillaryEquipmentBreaker, reliatax:ControlAndCommunicationSystemAncillaryEquipmentCabinetTemperatureSensor,
     reliatax:ControlAndCommunicationSystemAncillaryEquipmentCable, reliatax:ControlAndCommunicationSystemAncillaryEquipmentContactor;
   skos:prefLabel "Ancillary Equipment"@en .
@@ -425,7 +425,7 @@ reliatax:AncillaryEquipment a skos:Concept;
 reliatax:CommunicationSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:ControlCommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ControlAndCommunicationSystemCommunicationSystemAnalogIOUnit,
     reliatax:ControlAndCommunicationSystemCommunicationSystemDigitalIOUnit, reliatax:ControlAndCommunicationSystemCommunicationSystemEthernetModule,
     reliatax:ControlAndCommunicationSystemCommunicationSystemFieldBusMaster, reliatax:ControlAndCommunicationSystemCommunicationSystemFieldBusSlave,
@@ -435,7 +435,7 @@ reliatax:CommunicationSystem a skos:Concept;
 reliatax:ConditionMonitoringSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:ControlCommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ControlAndCommunicationSystemConditionMonitoringSystemConditionCable,
     reliatax:ControlAndCommunicationSystemConditionMonitoringSystemDataLogger, reliatax:ControlAndCommunicationSystemConditionMonitoringSystemProtocolAdapterCardForDataLogger,
     reliatax:ControlAndCommunicationSystemConditionMonitoringSystemSensor;
@@ -444,7 +444,7 @@ reliatax:ConditionMonitoringSystem a skos:Concept;
 reliatax:ControllerHardware a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:ControlCommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ControlAndCommunicationSystemControllerHardwareControllerPowerSupply,
     reliatax:ControlAndCommunicationSystemControllerHardwareCpu, reliatax:ControlAndCommunicationSystemControllerHardwareInternalCommunicationSystem,
     reliatax:ControlAndCommunicationSystemControllerHardwareMainIOUnit, reliatax:ControlAndCommunicationSystemControllerHardwareWatchDogUnit;
@@ -453,7 +453,7 @@ reliatax:ControllerHardware a skos:Concept;
 reliatax:ControllerSoftware a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:ControlCommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ControlAndCommunicationSystemControllerSoftwareClosedLoopControl,
     reliatax:ControlAndCommunicationSystemControllerSoftwareSupervisoryControl;
   skos:prefLabel "Controller Software"@en .
@@ -461,7 +461,7 @@ reliatax:ControllerSoftware a skos:Concept;
 reliatax:SafetyChain a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:ControlCommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:ControlAndCommunicationSystemSafetyChainEmergencyButton, reliatax:ControlAndCommunicationSystemSafetyChainMaxSpeedSwitch,
     reliatax:ControlAndCommunicationSystemSafetyChainPowerSwitch, reliatax:ControlAndCommunicationSystemSafetyChainShortCircuitSwitch,
     reliatax:ControlAndCommunicationSystemSafetyChainVibrationSwitch, reliatax:ControlAndCommunicationSystemSafetyChainWatchDogSwitch,
@@ -471,7 +471,7 @@ reliatax:SafetyChain a skos:Concept;
 reliatax:ConverterAuxiliaries a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:FrequencyConverter;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FrequencyConverterConverterAuxiliariesAuxiliaryPowerSupply,
     reliatax:FrequencyConverterConverterAuxiliariesCabinet, reliatax:FrequencyConverterConverterAuxiliariesCabinetHeatingSystem,
     reliatax:FrequencyConverterConverterAuxiliariesCabinetSensor, reliatax:FrequencyConverterConverterAuxiliariesCommunicationAndInterfaceUnit,
@@ -484,7 +484,7 @@ reliatax:ConverterAuxiliaries a skos:Concept;
 reliatax:ConverterPowerBus a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:FrequencyConverter;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FrequencyConverterConverterPowerBusBranchingUnit, reliatax:FrequencyConverterConverterPowerBusCapacitor,
     reliatax:FrequencyConverterConverterPowerBusContactor, reliatax:FrequencyConverterConverterPowerBusGeneratorSideConverter,
     reliatax:FrequencyConverterConverterPowerBusGeneratorSidePowerModule, reliatax:FrequencyConverterConverterPowerBusGridSideConverter,
@@ -495,7 +495,7 @@ reliatax:ConverterPowerBus a skos:Concept;
 reliatax:PowerConditioning a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:FrequencyConverter;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FrequencyConverterPowerConditioningCommonModeFilter, reliatax:FrequencyConverterPowerConditioningCrowbar,
     reliatax:FrequencyConverterPowerConditioningDcChopper, reliatax:FrequencyConverterPowerConditioningGeneratorSideFilter,
     reliatax:FrequencyConverterPowerConditioningLineFilterAssembly, reliatax:FrequencyConverterPowerConditioningVoltageLimiterUnit;
@@ -504,14 +504,14 @@ reliatax:PowerConditioning a skos:Concept;
 reliatax:PowerElectricalSystemMeasurements a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:PowerElectricalSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PowerElectricalSystemMeasurementsTa, reliatax:PowerElectricalSystemMeasurementsTv;
   skos:prefLabel "Measurements"@en .
 
 reliatax:PowerCircuit a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:PowerElectricalSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PowerElectricalSystemPowerCircuitCables, reliatax:PowerElectricalSystemPowerCircuitMachineContactor,
     reliatax:PowerElectricalSystemPowerCircuitMachineTransformer, reliatax:PowerElectricalSystemPowerCircuitMvBusbarOrIsolator,
     reliatax:PowerElectricalSystemPowerCircuitMvSwitchgear, reliatax:PowerElectricalSystemPowerCircuitSoftStartElectronics;
@@ -520,7 +520,7 @@ reliatax:PowerCircuit a skos:Concept;
 reliatax:HydraulicPowerPack a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:HydraulicsSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:HydraulicsSystemHydraulicPowerPackFilter, reliatax:HydraulicsSystemHydraulicPowerPackMotor,
     reliatax:HydraulicsSystemHydraulicPowerPackPressureValve, reliatax:HydraulicsSystemHydraulicPowerPackPump;
   skos:prefLabel "Hydraulic Power Pack"@en .
@@ -528,7 +528,7 @@ reliatax:HydraulicPowerPack a skos:Concept;
 reliatax:Actuator a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:HydraulicsSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:HydraulicsSystemActuatorBushing, reliatax:HydraulicsSystemActuatorCylinder,
     reliatax:HydraulicsSystemActuatorHoseOrFitting, reliatax:HydraulicsSystemActuatorHydraulicLinearDrive,
     reliatax:HydraulicsSystemActuatorLimitSwitch, reliatax:HydraulicsSystemActuatorLinkage,
@@ -539,39 +539,39 @@ reliatax:Actuator a skos:Concept;
 reliatax:TorqueConverter a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:HydraulicsSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Torque Converter"@en .
 
 reliatax:Differential a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:HydraulicsSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Differential"@en .
 
 reliatax:ViscousCoupling a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:HydraulicsSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Viscous Coupling"@en .
 
 reliatax:MeteorologicalSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:NacelleAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:NacelleAuxiliariesMeteorologicalSensorAnemometer, reliatax:NacelleAuxiliariesMeteorologicalSensorWindVane;
   skos:prefLabel "Meteorological Sensors"@en .
 
 reliatax:NacelleSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:NacelleAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:NacelleAuxiliariesSensorEmergencyVibrationSensor, reliatax:NacelleAuxiliariesSensorYawEncoder;
   skos:prefLabel "Nacelle Sensors"@en .
 
 reliatax:SafetySystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:NacelleAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:NacelleAuxiliariesSafetySystemBeacon, reliatax:NacelleAuxiliariesSafetySystemDownConductor,
     reliatax:NacelleAuxiliariesSafetySystemFallArrester, reliatax:NacelleAuxiliariesSafetySystemFirefightingSystem,
     reliatax:NacelleAuxiliariesSafetySystemLightningProtectionTermination, reliatax:NacelleAuxiliariesSafetySystemNacelleCoverMetallicMesh,
@@ -581,28 +581,28 @@ reliatax:SafetySystem a skos:Concept;
 reliatax:Bedplate a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:NacelleStructure;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:NacelleStructureBedplateBolt, reliatax:NacelleStructureBedplateCastOrWeldedStructure;
   skos:prefLabel "Bedplate"@en .
 
 reliatax:NacelleCover a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:NacelleStructure;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:NacelleStructureCoverFibreglass, reliatax:NacelleStructureCoverHatch;
   skos:prefLabel "Cover"@en .
 
 reliatax:GeneratorFrame a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:NacelleStructure;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:NacelleStructureGeneratorFrameBolt, reliatax:NacelleStructureGeneratorFrameCastOrWeldedStructure;
   skos:prefLabel "Generator Frame"@en .
 
 reliatax:YawBrake a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:YawSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:YawSystemBrakeCaliper, reliatax:YawSystemBrakeDisc, reliatax:YawSystemBrakeHose,
     reliatax:YawSystemBrakePath;
   skos:prefLabel "Yaw Brake"@en .
@@ -610,7 +610,7 @@ reliatax:YawBrake a skos:Concept;
 reliatax:YawDrive a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:YawSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:YawSystemDriveBearing, reliatax:YawSystemDriveDamper, reliatax:YawSystemDriveGearbox,
     reliatax:YawSystemDriveMotor, reliatax:YawSystemDrivePinion;
   skos:prefLabel "Yaw Drive"@en .
@@ -618,7 +618,7 @@ reliatax:YawDrive a skos:Concept;
 reliatax:YawSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:YawSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:YawSystemSensorEncoder, reliatax:YawSystemSensorWind-UpCounter;
   skos:prefLabel "Yaw Sensors"@en .
 
@@ -626,104 +626,104 @@ reliatax:BladeLightningProtectionTermination a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Blade Lightning Protection Termination"@en .
 
 reliatax:BladeLightningDownConductor a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Blade Lightning Down-conductor"@en .
 
 reliatax:DeIcingSystem a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "De-Icing System"@en .
 
 reliatax:LeadingEdgeBond a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Leading Edge Bond"@en .
 
 reliatax:NutsAndBolts a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Nuts And Bolts"@en .
 
 reliatax:PaintAndCoating a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Paint And Coating"@en .
 
 reliatax:RootStructure a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Root Structure"@en .
 
 reliatax:SandwichShell a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Sandwich Shell"@en .
 
 reliatax:SparBox a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Spar Box"@en .
 
 reliatax:SparCap a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Spar Cap"@en .
 
 reliatax:SparWeb a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Spar Web"@en .
 
 reliatax:TrailingEdgeBond a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Blade;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Trailing Edge Bond"@en .
 
 reliatax:ExitHatch a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Hub;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Exit Hatch"@en .
 
 reliatax:NoseCone a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Hub;
   skos:editorialNote "Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component."@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Nose Cone"@en .
 
 reliatax:PitchCabinet a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:PitchSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PitchSystemPitchCabinetBattery, reliatax:PitchSystemPitchCabinetBatteryCharger,
     reliatax:PitchSystemPitchCabinetHeater, reliatax:PitchSystemPitchCabinetLocalController,
     reliatax:PitchSystemPitchCabinetSwitchboard;
@@ -732,7 +732,7 @@ reliatax:PitchCabinet a skos:Concept;
 reliatax:PitchDrive a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:PitchSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PitchSystemPitchDriveBearing, reliatax:PitchSystemPitchDriveGearbox,
     reliatax:PitchSystemPitchDriveMotor, reliatax:PitchSystemPitchDriveMotorCooling, reliatax:PitchSystemPitchDriveMotorCoolingSystem,
     reliatax:PitchSystemPitchDriveMotorDrive, reliatax:PitchSystemPitchDrivePinion;
@@ -741,7 +741,7 @@ reliatax:PitchDrive a skos:Concept;
 reliatax:PitchSensors a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:PitchSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:PitchSystemSensorPositionEncoder, reliatax:PitchSystemSensorTemperature,
     reliatax:PitchSystemSensorVoltmeter;
   skos:prefLabel "Pitch Sensors"@en .
@@ -749,14 +749,14 @@ reliatax:PitchSensors a skos:Concept;
 reliatax:GravityBasedFoundation a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Foundation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FoundationGravityBasedConcrete, reliatax:FoundationGravityBasedSteelReinforcement;
   skos:prefLabel "Gravity Based Foundation"@en .
 
 reliatax:Monopile a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Foundation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FoundationMonopileCorrosionProtection, reliatax:FoundationMonopilePile,
     reliatax:FoundationMonopileTransitionPiece;
   skos:prefLabel "Monopile"@en .
@@ -764,7 +764,7 @@ reliatax:Monopile a skos:Concept;
 reliatax:Onshore a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Foundation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FoundationOnshoreConcrete, reliatax:FoundationOnshoreNutsAndBolts,
     reliatax:FoundationOnshorePile, reliatax:FoundationOnshoreSteelReinforcement;
   skos:prefLabel "Onshore"@en .
@@ -772,7 +772,7 @@ reliatax:Onshore a skos:Concept;
 reliatax:SpaceFrameTripod a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Foundation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:FoundationSpaceFrameOrTripodCorrosionProtection, reliatax:FoundationSpaceFrameOrTripodPiles,
     reliatax:FoundationSpaceFrameOrTripodStructures;
   skos:prefLabel "Space Frame / Tripod"@en .
@@ -780,7 +780,7 @@ reliatax:SpaceFrameTripod a skos:Concept;
 reliatax:AccessEquipment a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:Tower;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:narrower reliatax:TowerAccessEquipmentLadder, reliatax:TowerAccessEquipmentLandingPad,
     reliatax:TowerAccessEquipmentLigthningProtection;
   skos:prefLabel "Access Equipment"@en .
@@ -789,1444 +789,1444 @@ reliatax:HVLink a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:GridConnection;
   skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "HV Link"@en .
 
 reliatax:SubstationTransformer a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:GridConnection;
   skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Substation Transformer"@en .
 
 reliatax:UtilityCommunicationControl a skos:Concept;
   reliatax:hierarchyLevel "Sub-Assembly"@en;
   skos:broader reliatax:GridConnection;
   skos:editorialNote "\"Reliawind Taxonomy classifies this concept both as a Sub-assembly and as a Component.\""@en;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Utility Communication & Control"@en .
 
 reliatax:GearboxBearingCarrier a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxBearings;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Carrier Bearing"@en .
 
 reliatax:GearboxBearingPlanet a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxBearings;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Planet Bearing"@en .
 
 reliatax:GearboxBearingShaft a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxBearings;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Shaft Bearing"@en .
 
 reliatax:GearboxCoolingSystemHose a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hose"@en .
 
 reliatax:GearboxCoolingSystemPump a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pump"@en .
 
 reliatax:GearboxCoolingSystemRadiator a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Radiator"@en .
 
 reliatax:GearboxGearHollowShaft a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxGears;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hollow Shaft"@en .
 
 reliatax:GearboxGearPlanetCarrier a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxGears;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Planet Carrier"@en .
 
 reliatax:GearboxGearPlanet a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxGears;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Planet Gear"@en .
 
 reliatax:GearboxGearRing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxGears;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Ring Gear"@en .
 
 reliatax:GearboxGearSpur a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxGears;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Spur Gear"@en .
 
 reliatax:GearboxGearSun a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxGears;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Sun Gear"@en .
 
 reliatax:GearboxHousingBushing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxHousing;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Bushing"@en .
 
 reliatax:GearboxHousingCase a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxHousing;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Case"@en .
 
 reliatax:GearboxHousingMounting a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxHousing;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Mounting"@en .
 
 reliatax:GearboxHousingTorqueArmSystem a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxHousing;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Torque Arm System"@en .
 
 reliatax:GearboxLubricationSystemHose a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hose"@en .
 
 reliatax:GearboxLubricationSystemMotor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Motor"@en .
 
 reliatax:GearboxLubricationSystemPrimaryFilter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Primary Filter"@en .
 
 reliatax:GearboxLubricationSystemPump a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pump"@en .
 
 reliatax:GearboxLubricationSystemReservoir a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Reservoir"@en .
 
 reliatax:GearboxLubricationSystemSeal a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Seal"@en .
 
 reliatax:GearboxLubricationSystemSecondaryFilter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Secondary Filter"@en .
 
 reliatax:GearboxSensorDebris a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Debris"@en .
 
 reliatax:GearboxSensorOilLevel a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Oil Level"@en .
 
 reliatax:GearboxSensorPressure1 a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pressure 1"@en .
 
 reliatax:GearboxSensorPressure2 a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pressure 2"@en .
 
 reliatax:GearboxSensorTemperature a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GearboxSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Temperature"@en .
 
 reliatax:GeneratorCoolingSystemFan a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cooling Fan"@en .
 
 reliatax:GeneratorCoolingSystemFilter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Filter"@en .
 
 reliatax:GeneratorCoolingSystemHose a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hose"@en .
 
 reliatax:GeneratorCoolingSystemRadiator a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorCoolingSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Radiator"@en .
 
 reliatax:GeneratorLubricationSystemPump a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pump"@en .
 
 reliatax:GeneratorLubricationSystemReservoir a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorLubricationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Reservoir"@en .
 
 reliatax:GeneratorRotorCommutator a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorRotor;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Commutator"@en .
 
 reliatax:GeneratorRotorExciter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorRotor;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Exciter"@en .
 
 reliatax:GeneratorRotorResistanceController a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorRotor;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Resistance Controller"@en .
 
 reliatax:GeneratorRotorLamination a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorRotor;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Rotor Lamination"@en .
 
 reliatax:GeneratorRotorWinding a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorRotor;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Rotor Winding"@en .
 
 reliatax:GeneratorRotorSlipRing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorRotor;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Slip Ring"@en .
 
 reliatax:GeneratorSensorTemperature a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Core Temperature Sensor"@en .
 
 reliatax:GeneratorSensorEncoder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Encoder"@en .
 
 reliatax:GeneratorSensorWattmeter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Wattmeter"@en .
 
 reliatax:GeneratorStatorMagnet a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Magnet"@en .
 
 reliatax:GeneratorStatorLamination a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Stator Lamination"@en .
 
 reliatax:GeneratorStatorWinding a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Stator Winding"@en .
 
 reliatax:GeneratorStructuralAndMechanicalFrontBearing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStructuralMechanical;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Front Bearing"@en .
 
 reliatax:GeneratorStructuralAndMechanicalHousing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStructuralMechanical;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Housing"@en .
 
 reliatax:GeneratorStructuralAndMechanicalRearBearing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStructuralMechanical;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Rear Bearing"@en .
 
 reliatax:GeneratorStructuralAndMechanicalShaft a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStructuralMechanical;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Shaft"@en .
 
 reliatax:GeneratorStructuralAndMechanicalSilentBlock a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorStructuralMechanical;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Silent Block"@en .
 
 reliatax:MainShaftSetHighSpeedSideCoupling a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HighSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Coupling"@en .
 
 reliatax:MainShaftSetHighSpeedSideRotorLock a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HighSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Rotor Lock"@en .
 
 reliatax:MainShaftSetHighSpeedSideShaft a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HighSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Shaft"@en .
 
 reliatax:MainShaftSetHighSpeedSideTransmissionShaft a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HighSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Transmission Shaft"@en .
 
 reliatax:MainShaftSetLowSpeedSideAxialBearing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Axial Bearing"@en .
 
 reliatax:MainShaftSetLowSpeedSideCompressionCoupling a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Compression Coupling"@en .
 
 reliatax:MainShaftSetLowSpeedSideConnectorPlate a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Connector Plate"@en .
 
 reliatax:MainShaftSetLowSpeedSideMainBearingSeal a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Main Bearing Seal"@en .
 
 reliatax:MainShaftSetLowSpeedSideMainBearingTemperatureSensor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Main Bearing Temperature Sensor"@en .
 
 reliatax:MainShaftSetLowSpeedSideMainShaft a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Main Shaft"@en .
 
 reliatax:MainShaftSetLowSpeedSideRadialBearing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Radial Bearing"@en .
 
 reliatax:MainShaftSetLowSpeedSideRotorLock a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Rotor Lock"@en .
 
 reliatax:MainShaftSetLowSpeedSideSlipRing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LowSpeedSide;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Slip Ring"@en .
 
 reliatax:MainShaftSetMechanicalBrakeCaliper a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MechanicalBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Caliper"@en .
 
 reliatax:MainShaftSetMechanicalBrakeDisk a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MechanicalBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Disk"@en .
 
 reliatax:MainShaftSetMechanicalBrakePad a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MechanicalBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pad"@en .
 
 reliatax:MainShaftSetMechanicalBrakeTranmissionLock a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MechanicalBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Tranmission Lock"@en .
 
 reliatax:MainShaftSetSensorHighSpeed a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MainShaftSetSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "High Speed Sensor"@en .
 
 reliatax:MainShaftSetSensorLowSpeed a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MainShaftSetSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Low Speed Sensor"@en .
 
 reliatax:MainShaftSetSensorPosition a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MainShaftSetSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Position Sensor"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalService24DcFeeder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "24 Dc Feeder"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceAuxiliaryTransformer a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Auxiliary Transformer"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceBreaker a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Breaker"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceCabinet a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cabinet"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceFan a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Fan"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceFuse a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Fuse"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceGridProtectionRelay a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Grid Protection Relay"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceLight a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Light"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceMechanicalSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Mechanical Switch"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServicePowerPoint a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Power Point"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceProtectionCabinet a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Protection Cabinet"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServicePushbutton a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pushbutton"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceRelay a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Relay"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceSpaceHeater a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Space Heater"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceSurgeArrester a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Surge Arrester"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceThermalProtection a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Thermal Protection"@en .
 
 reliatax:AuxiliaryElectricalSystemElectricalServiceUps a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ElectricalServices;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Ups"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemAirTermination a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Air Termination"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemBondingElement a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Bonding Element"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthConnector a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Earth Connector"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemEarthTermination a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Earth Termination"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSlidingContact a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Sliding Contact"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSparkGapSystem a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Spark Gap System"@en .
 
 reliatax:AuxiliaryElectricalSystemLightningProtectionSystemSurgeArrester a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:LightningProtectionSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Surge Arrester"@en .
 
 reliatax:ControlAndCommunicationSystemAncillaryEquipmentBreaker a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AncillaryEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Breaker"@en .
 
 reliatax:ControlAndCommunicationSystemAncillaryEquipmentCabinetTemperatureSensor a
     skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AncillaryEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cabinet Temperature Sensor"@en .
 
 reliatax:ControlAndCommunicationSystemAncillaryEquipmentCable a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AncillaryEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cable"@en .
 
 reliatax:ControlAndCommunicationSystemAncillaryEquipmentContactor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AncillaryEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Contactor"@en .
 
 reliatax:ControlAndCommunicationSystemCommunicationSystemAnalogIOUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:CommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Analog I/O Unit"@en .
 
 reliatax:ControlAndCommunicationSystemCommunicationSystemDigitalIOUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:CommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Digital I/O Unit"@en .
 
 reliatax:ControlAndCommunicationSystemCommunicationSystemEthernetModule a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:CommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Ethernet Module"@en .
 
 reliatax:ControlAndCommunicationSystemCommunicationSystemFieldBusMaster a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:CommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Field Bus Master"@en .
 
 reliatax:ControlAndCommunicationSystemCommunicationSystemFieldBusSlave a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:CommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Field Bus Slave"@en .
 
 reliatax:ControlAndCommunicationSystemCommunicationSystemFrequencyUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:CommunicationSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Frequency Unit"@en .
 
 reliatax:ControlAndCommunicationSystemConditionMonitoringSystemConditionCable a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConditionMonitoringSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Condition Cables"@en .
 
 reliatax:ControlAndCommunicationSystemConditionMonitoringSystemDataLogger a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConditionMonitoringSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Data Logger"@en .
 
 reliatax:ControlAndCommunicationSystemConditionMonitoringSystemProtocolAdapterCardForDataLogger
   a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConditionMonitoringSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Protocol Adapter Card For Data Logger"@en .
 
 reliatax:ControlAndCommunicationSystemConditionMonitoringSystemSensor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConditionMonitoringSystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Sensors"@en .
 
 reliatax:ControlAndCommunicationSystemControllerHardwareControllerPowerSupply a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerHardware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Controller Power Supply"@en .
 
 reliatax:ControlAndCommunicationSystemControllerHardwareCpu a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerHardware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cpu"@en .
 
 reliatax:ControlAndCommunicationSystemControllerHardwareInternalCommunicationSystem
   a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerHardware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Internal Communication System"@en .
 
 reliatax:ControlAndCommunicationSystemControllerHardwareMainIOUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerHardware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Main I/O Unit"@en .
 
 reliatax:ControlAndCommunicationSystemControllerHardwareWatchDogUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerHardware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Watch Dog Unit"@en .
 
 reliatax:ControlAndCommunicationSystemControllerSoftwareClosedLoopControl a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerSoftware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Closed Loop Control Software"@en .
 
 reliatax:ControlAndCommunicationSystemControllerSoftwareSupervisoryControl a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ControllerSoftware;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Supervisory Control Software"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainEmergencyButton a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Emergency Button"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainMaxSpeedSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Max Speed Switch"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainPowerSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Power Switch"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainShortCircuitSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Short Circuit Switch"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainVibrationSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Vibration Switch"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainWatchDogSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Watch Dog Switch"@en .
 
 reliatax:ControlAndCommunicationSystemSafetyChainWind-UpSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetyChain;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Wind-Up Switch"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesAuxiliaryPowerSupply a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Auxiliary Power Supply"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesCabinet a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cabinet"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesCabinetHeatingSystem a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cabinet Heating System"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesCabinetSensor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cabinet Sensor"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesCommunicationAndInterfaceUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Communication And Interface Unit"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesControlBoard a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Control Board"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesGeneratorSideFan a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Generator Side Fan"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesGridSideFan a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Grid Side Fan"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesMeasurementUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Measurement Unit"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesPowerSupply a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Power Supply"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesPowerSupply24v a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Power Supply 24v"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesTachometerAdapter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Tachometer Adapter"@en .
 
 reliatax:FrequencyConverterConverterAuxiliariesThermostat a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterAuxiliaries;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Thermostat"@en .
 
 reliatax:FrequencyConverterConverterPowerBusBranchingUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Branching Unit"@en .
 
 reliatax:FrequencyConverterConverterPowerBusCapacitor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Capacitor"@en .
 
 reliatax:FrequencyConverterConverterPowerBusContactor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Contactor"@en .
 
 reliatax:FrequencyConverterConverterPowerBusGeneratorSideConverter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Generator Side Converter"@en .
 
 reliatax:FrequencyConverterConverterPowerBusGeneratorSidePowerModule a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Generator Side Power Module"@en .
 
 reliatax:FrequencyConverterConverterPowerBusGridSideConverter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Grid Side Converter"@en .
 
 reliatax:FrequencyConverterConverterPowerBusGridSidePowerModule a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Grid Side Power Module"@en .
 
 reliatax:FrequencyConverterConverterPowerBusInductor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Inductor"@en .
 
 reliatax:FrequencyConverterConverterPowerBusLoadSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Load Switch"@en .
 
 reliatax:FrequencyConverterConverterPowerBusPre-ChargeUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:ConverterPowerBus;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pre-Charge Unit"@en .
 
 reliatax:FrequencyConverterPowerConditioningCommonModeFilter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerConditioning;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Common Mode Filter"@en .
 
 reliatax:FrequencyConverterPowerConditioningCrowbar a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerConditioning;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Crowbar"@en .
 
 reliatax:FrequencyConverterPowerConditioningDcChopper a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerConditioning;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Dc Chopper"@en .
 
 reliatax:FrequencyConverterPowerConditioningGeneratorSideFilter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerConditioning;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Generator Side Filter"@en .
 
 reliatax:FrequencyConverterPowerConditioningLineFilterAssembly a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerConditioning;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Line Filter Assembly"@en .
 
 reliatax:FrequencyConverterPowerConditioningVoltageLimiterUnit a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerConditioning;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Voltage Limiter Unit"@en .
 
 reliatax:PowerElectricalSystemMeasurementsTa a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerElectricalSystemMeasurements;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Ta"@en .
 
 reliatax:PowerElectricalSystemMeasurementsTv a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerElectricalSystemMeasurements;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Tv"@en .
 
 reliatax:PowerElectricalSystemPowerCircuitCables a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerCircuit;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cables"@en .
 
 reliatax:PowerElectricalSystemPowerCircuitMachineContactor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerCircuit;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Machine Contactor"@en .
 
 reliatax:PowerElectricalSystemPowerCircuitMachineTransformer a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerCircuit;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Machine Transformer"@en .
 
 reliatax:PowerElectricalSystemPowerCircuitMvBusbarOrIsolator a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerCircuit;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Mv Busbar / Isolator"@en .
 
 reliatax:PowerElectricalSystemPowerCircuitMvSwitchgear a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerCircuit;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Mv Switchgear"@en .
 
 reliatax:PowerElectricalSystemPowerCircuitSoftStartElectronics a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PowerCircuit;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Soft Start Electronics"@en .
 
 reliatax:HydraulicsSystemHydraulicPowerPackMotor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HydraulicPowerPack;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Motor"@en .
 
 reliatax:HydraulicsSystemHydraulicPowerPackPump a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HydraulicPowerPack;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pump"@en .
 
 reliatax:HydraulicsSystemHydraulicPowerPackPressureValve a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HydraulicPowerPack;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pressure Valve"@en .
 
 reliatax:HydraulicsSystemHydraulicPowerPackFilter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:HydraulicPowerPack;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Filter"@en .
 
 reliatax:HydraulicsSystemActuatorBushing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Bushing"@en .
 
 reliatax:HydraulicsSystemActuatorCylinder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cylinder"@en .
 
 reliatax:HydraulicsSystemActuatorHoseOrFitting a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hose / Fitting"@en .
 
 reliatax:HydraulicsSystemActuatorHydraulicLinearDrive a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hydraulic Linear Drive"@en .
 
 reliatax:HydraulicsSystemActuatorLimitSwitch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Limit Switch"@en .
 
 reliatax:HydraulicsSystemActuatorLinkage a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Linkage"@en .
 
 reliatax:HydraulicsSystemActuatorMiscellaneousHydraulicsSystem a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Miscellaneous Hydraulics System"@en .
 
 reliatax:HydraulicsSystemActuatorPositionController a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Position Controller"@en .
 
 reliatax:HydraulicsSystemActuatorProportionalValve a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Proportional Valve"@en .
 
 reliatax:HydraulicsSystemActuatorPump a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Actuator;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pump"@en .
 
 reliatax:NacelleAuxiliariesMeteorologicalSensorAnemometer a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MeteorologicalSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Anemometer"@en .
 
 reliatax:NacelleAuxiliariesMeteorologicalSensorWindVane a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:MeteorologicalSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Wind Vane"@en .
 
 reliatax:NacelleAuxiliariesSensorEmergencyVibrationSensor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:NacelleSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Emergency Vibration Sensor"@en .
 
 reliatax:NacelleAuxiliariesSensorYawEncoder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:NacelleSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Encoder"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemBeacon a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Beacon"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemDownConductor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Down Conductor"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemFallArrester a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Fall Arrester"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemFirefightingSystem a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Firefighting System"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemNacelleCoverMetallicMesh a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Nacelle Cover Metallic Mesh"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemLightningProtectionTermination a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Lightning Protection Termination"@en .
 
 reliatax:NacelleAuxiliariesSafetySystemServiceCrane a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SafetySystem;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Service Crane"@en .
 
 reliatax:NacelleStructureBedplateBolt a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Bedplate;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Bolts"@en .
 
 reliatax:NacelleStructureBedplateCastOrWeldedStructure a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Bedplate;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cast or Welded Structure"@en .
 
 reliatax:NacelleStructureCoverFibreglass a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:NacelleCover;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Fibreglass"@en .
 
 reliatax:NacelleStructureCoverHatch a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:NacelleCover;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Hatch"@en .
 
 reliatax:NacelleStructureGeneratorFrameBolt a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorFrame;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Bolts"@en .
 
 reliatax:NacelleStructureGeneratorFrameCastOrWeldedStructure a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GeneratorFrame;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Cast or Welded Structure"@en .
 
 reliatax:YawSystemBrakeCaliper a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Brake Calipers"@en .
 
 reliatax:YawSystemBrakeDisc a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Brake Disc"@en .
 
 reliatax:YawSystemBrakeHose a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Brake Hoses"@en .
 
 reliatax:YawSystemBrakePath a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawBrake;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Brake Paths"@en .
 
 reliatax:YawSystemDriveDamper a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Damper"@en .
 
 reliatax:YawSystemDriveBearing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Bearing"@en .
 
 reliatax:YawSystemDriveGearbox a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Gearbox"@en .
 
 reliatax:YawSystemDriveMotor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Motor"@en .
 
 reliatax:YawSystemDrivePinion a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Pinion"@en .
 
 reliatax:YawSystemSensorWind-UpCounter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Wind-Up Counter"@en .
 
 reliatax:YawSystemSensorEncoder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:YawSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Yaw Encoder"@en .
 
 reliatax:PitchSystemPitchCabinetBattery a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchCabinet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Battery"@en .
 
 reliatax:PitchSystemPitchCabinetBatteryCharger a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchCabinet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Battery Charger"@en .
 
 reliatax:PitchSystemPitchCabinetHeater a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchCabinet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Heater"@en .
 
 reliatax:PitchSystemPitchCabinetLocalController a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchCabinet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Local Controller"@en .
 
 reliatax:PitchSystemPitchCabinetSwitchboard a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchCabinet;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Switchboard"@en .
 
 reliatax:PitchSystemPitchDriveMotor a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Motor"@en .
 
 reliatax:PitchSystemPitchDriveMotorCooling a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Motor Cooling"@en .
 
 reliatax:PitchSystemPitchDriveMotorCoolingSystem a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Motor Cooling System"@en .
 
 reliatax:PitchSystemPitchDriveMotorDrive a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Motor Drive"@en .
 
 reliatax:PitchSystemPitchDrivePinion a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pinion"@en .
 
 reliatax:PitchSystemPitchDriveBearing a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pitch Bearing"@en .
 
 reliatax:PitchSystemPitchDriveGearbox a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchDrive;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pitch Gearbox"@en .
 
 reliatax:PitchSystemSensorPositionEncoder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Position Encoder"@en .
 
 reliatax:PitchSystemSensorTemperature a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Temperature Sensor"@en .
 
 reliatax:PitchSystemSensorVoltmeter a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:PitchSensors;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Voltmeter"@en .
 
 reliatax:FoundationGravityBasedConcrete a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GravityBasedFoundation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Concrete"@en .
 
 reliatax:FoundationGravityBasedSteelReinforcement a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:GravityBasedFoundation;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Steel Reinforcement"@en .
 
 reliatax:FoundationMonopileCorrosionProtection a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Monopile;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Corrosion Protection"@en .
 
 reliatax:FoundationMonopilePile a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Monopile;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Pile"@en .
 
 reliatax:FoundationMonopileTransitionPiece a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Monopile;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Transition Piece"@en .
 
 reliatax:FoundationOnshoreConcrete a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Onshore;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Concrete"@en .
 
 reliatax:FoundationOnshoreNutsAndBolts a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Onshore;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Nuts & Bolts"@en .
 
 reliatax:FoundationOnshorePile a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Onshore;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Piles"@en .
 
 reliatax:FoundationOnshoreSteelReinforcement a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Onshore;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Steel Reinforcement"@en .
 
 reliatax:FoundationSpaceFrameOrTripodCorrosionProtection a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SpaceFrameTripod;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Corrosion Protection"@en .
 
 reliatax:FoundationSpaceFrameOrTripodPiles a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SpaceFrameTripod;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Piles"@en .
 
 reliatax:FoundationSpaceFrameOrTripodStructures a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:SpaceFrameTripod;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Structures"@en .
 
 reliatax:TowerAccessEquipmentLadder a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AccessEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Ladder"@en .
 
 reliatax:TowerAccessEquipmentLandingPad a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AccessEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Landing Pad"@en .
 
 reliatax:TowerAccessEquipmentLigthningProtection a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:AccessEquipment;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Ligthning Protection"@en .
 
 reliatax:TowerClimbAssist a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Tower;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Climb Assist"@en .
 
 reliatax:TowerMaintenanceCrane a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Tower;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Maintenance Crane"@en .
 
 reliatax:TowerNutsAndBolts a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Tower;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Nuts & Bolts"@en .
 
 reliatax:TowerPaintOrCoating a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Tower;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Paint/Coating"@en .
 
 reliatax:TowerSection a skos:Concept;
   reliatax:hierarchyLevel "Component"@en;
   skos:broader reliatax:Tower;
-  skos:inScheme <http://purl.ontoforge.org/wedo/reilatax/>;
+  skos:inScheme <http://purl.ontoforge.org/wedo/reliatax/>;
   skos:prefLabel "Tower Section"@en .
